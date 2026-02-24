@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SW#2: Intramurals Team Checker</title>
+
+  <!-- WEBSITE ICON (FAVICON) -->
+  <link rel="icon" type="image/png" href="physical.png">
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Walter+Turncoat&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Schoolbell", cursive;
+      background-color: #77BEF0;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: #EA5B6F;
+      padding: 0 20px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      color: white;
+      font-size: 22px;
+      text-decoration: none;
+      font-family: "Darumadrop One", sans-serif;
+    }
+
+    .logo-icon {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-color: #FFCB61;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      font-weight: bold;
+      color: #EA5B6F;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+    }
+
+    .nav-links li {
+      margin-left: 20px;
+      font-family: "Darumadrop One", sans-serif;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      padding: 8px 12px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      background: #FF894F;
+      border-radius: 6px;
+    }
+
+    /* MAIN CONTENT */
+    .container {
+      padding: 30px;
+      max-width: 500px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      font-family: "Darumadrop One", sans-serif;
+      color:#FFCB61;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      width: 100%;
+      background-color: #FF894F;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 8px;
+      transition: 0.3s;
+      font-family: "Darumadrop One", sans-serif;
+    }
+
+    button:hover {
+      background-color: #EA5B6F;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #EA5B6F;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .circle {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-color: #FFCB61;
+      color: #EA5B6F;
+      line-height: 35px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Schoolbell", cursive;
+  background-color: #77BEF0;
+}
+
+.container {
+  flex: 1;
+  padding: 30px;
+  max-width: 500px;
+  margin: 40px auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+footer {
+  background-color: #EA5B6F;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+option {
+      font-family: "Walter Turncoat", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+ h1 {
+      color: #FF894F;
+      margin-bottom: 20px;
+      font-family: "Darumadrop One", sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <nav>
+    <div class="navbar">
+      <a href="#" class="logo">
+        <div class="logo-icon">I</div>
+        Intrams Checker
+      </a>
+
+       <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="intrams.html">Intrams Checker</a></li>
+        <li><a href="players.html">Players</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+    <center><h1>Intrams Checker</h1></center>
+    
+    <label>Confirmation of Intramurals Online Registration:</label>
+    <select>
+      <option value="">Select</option>
+      <option>yes</option>
+      <option>no</option>
+    </select>
+
+    <label>Confirmation of Medical Clearance:</label>
+    <select>
+      <option value="">Select</option>
+      <option>yes</option>
+      <option>no</option>
+    </select>
+
+    <label>Grade Level & Section:</label>
+    <input type="text" placeholder="Enter Grade & Section">
+
+    <button onclick="alert('Checking information...')">
+      Check Eligibility
+    </button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="circle">C</div>
+    <div>
+      Alex Brodhagen and Samantha Rebadulla       |       10-Ruby
+    </div>
+  </footer>
+
+</body>
+</html>
