@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.7.3/core.css">
+    <script type="module" src="https://pyscript.net/releases/2025.7.3/core.js"></script>
+    <title>Teams</title>
+    
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; margin: 0; display: flex; flex-direction: column; align-items: center; }
+        
+        /* Navigation Bar */
+        nav { background: #2c3e50; width: 100%; padding: 15px; display: flex; justify-content: center; gap: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        nav button { background: #34495e; color: white; border: none; padding: 12px 20px; cursor: pointer; border-radius: 6px; font-weight: bold; transition: 0.3s; }
+        nav button:hover { background: #1abc9c; transform: translateY(-2px); }
+
+        /* Container Sections */
+        .page-section { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); width: 90%; max-width: 500px; margin-top: 50px; text-align: center; display: none; }
+        .active { display: block; } /* This class shows the current page */
+
+        /* Form Elements */
+        .form-group { text-align: left; margin-bottom: 20px; }
+        input[type="text"], input[type="password"], select { width: 100%; padding: 12px; margin-top: 8px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
+        
+        /* The Gradient Button from your screenshots */
+        .btn-submit { width: 100%; padding: 15px; margin-top: 25px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; color: #444; 
+                      background: linear-gradient(to right, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb); transition: 0.3s; }
+        .btn-submit:hover { opacity: 0.9; transform: scale(1.02); }
+
+        /* Player List Styling */
+        #player-list { text-align: left; list-style: none; padding: 0; }
+        #player-list li { padding: 10px; border-bottom: 1px solid #eee; font-size: 15px; color: #333; }
+        #player-list li:nth-child(even) { background-color: #f9f9f9; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <button py-click="show_signup">Sign Up</button>
+        <button py-click="show_checker">Team Checker</button>
+        <button py-click="show_players">Player List</button>
+    </nav>
+
+    <div id="section-signup" class="page-section active">
+        <h2>Create Account</h2>
+        <div class="form-group">
+            <input type="text" id="user" placeholder="Username">
+            <input type="password" id="pass" placeholder="Password">
+        </div>
+        <button class="btn-submit" py-click="run_signup">Sign Up</button>
+        <p id="signup-out" style="color: #27ae60; font-weight: bold; margin-top: 20px;"></p>
+    </div>
+
+    <div id="section-checker" class="page-section">
+        <h2>Team Checker</h2>
+        <div class="form-group">
+            <p>Are you done with the online registration?</p>
+            <input type="radio" name="reg" id="reg-yes"> Yes 
+            <input type="radio" name="reg" id="reg-no"> No
+        </div>
+        <div class="form-group">
+            <p>Do you have the medical clearance?</p>
+            <input type="radio" name="med" id="med-yes"> Yes
+            <input type="radio" name="med" id="med-no"> No
+        </div>
+        <div class="form-group">
+            <select id="grade_lvl"><option value="0">Select Grade</option><option value="10">10</option></select>
+            <select id="sect_name" style="margin-top:10px;"><option value="">Select Section</option><option value="Ruby">Ruby</option><option value="Diamond">Diamond</option></select>
+        </div>
+        <button class="btn-submit" py-click="run_checker">Check Team</button>
+        <div id="checker-out" style="margin-top:25px; font-weight:bold; color: #2c3e50;"></div>
+    </div>
+
+    <div id="section-players" class="page-section">
+        <h2>Intramurals Players</h2>
+        <ul id="player-list"></ul>
+    </div>
+    <py-script src="./main.py"></py-script>
+
+</body>
+</html>
