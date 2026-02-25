@@ -33,9 +33,26 @@ def run_checker(event):
     section = document.querySelector("#sect_name").value
     output = document.querySelector("#checker-out")
     
-    if is_reg and is_med and section:
-        # Match the output from your Seatwork 2 screenshot
-        output.innerHTML = f"Congratulations! You are part of the <span style='color:#f39c12;'>Yellow Tigers</span> 🐯"
+    # Section-to-team mapping with emojis
+    teams = {
+        "Ruby": ("Blue Bears", "🐻"),
+        "Sapphire": ("Red Bulldogs", "🐶"),
+        "Emerald": ("Yellow Tigers", "🐯"),
+        "Topaz": ("Green Hornets", "🐝")
+    }
+    
+    # Color mapping for each team
+    colors = {
+        "Blue Bears": "#3498db",
+        "Red Bulldogs": "#e74c3c",
+        "Yellow Tigers": "#f39c12",
+        "Green Hornets": "#27ae60"
+    }
+    
+    if is_reg and is_med and section in teams:
+        team_name, emoji = teams[section]
+        team_color = colors.get(team_name, "#000")
+        output.innerHTML = f"Congratulations! You are part of the <span style='color:{team_color};'>{team_name} {emoji}</span>"
     else:
         output.innerText = "Error: Ensure registration and medical clearance are checked."
 
@@ -55,4 +72,5 @@ def display_player_loop():
     for i, name in enumerate(players, 1):
         li_item = document.createElement("li")
         li_item.innerText = f"{i}) {name}"
+
         list_container.appendChild(li_item)
