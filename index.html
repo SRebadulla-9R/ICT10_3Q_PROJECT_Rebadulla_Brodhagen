@@ -8,17 +8,26 @@
     <title>Project 3Q  |  Intramurals</title>
     
     <style>
+    /* Import cute fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Henny+Penny&family=Sour+Gummy&display=swap');
+
     /* Base Styles */
     body { 
-        font-family: 'Baloo 2', 'Comic Sans MS', sans-serif; 
-        background: linear-gradient(135deg, #ffd1dc, #ffe7f0, #d0f0fd, #fdf6d0); 
+        font-family: 'Sour Gummy', sans-serif; 
+        background: linear-gradient(135deg, #F26076, #FF9760, #FFD150, #458B73); 
+        background-size: 400% 400%; 
+        animation: gradientBG 20s ease infinite;
         margin: 0; 
         display: flex; 
         flex-direction: column; 
         align-items: center; 
         color: #333; 
-        background-size: 400% 400%; 
-        animation: gradientBG 20s ease infinite;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Henny Penny', cursive;
+        color: #F26076;
+        text-shadow: 1px 1px #FFD150;
     }
 
     @keyframes gradientBG {
@@ -29,32 +38,32 @@
 
     /* Navigation Bar */
     nav { 
-        background: linear-gradient(to right, #fcd5ce, #fef1f5, #d0f0fd); 
+        background: #FFD150;
         width: 100%; 
         padding: 15px; 
         display: flex; 
         justify-content: center; 
         gap: 15px; 
         box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
-        border-bottom: 2px solid #ffd1dc;
+        border-bottom: 2px solid #F26076;
         border-radius: 0 0 20px 20px;
     }
     nav button { 
-        background: #ffd1dc; 
-        color: #ff6f91; 
-        border: 2px solid #ffb3c1; 
+        background: #F26076; 
+        color: #fff; 
+        border: 2px solid #FF9760; 
         padding: 12px 20px; 
         cursor: pointer; 
         border-radius: 12px; 
         font-weight: bold; 
-        text-shadow: 1px 1px #ffe6ef; 
+        text-shadow: 1px 1px #FFD150; 
         transition: 0.3s; 
     }
     nav button:hover { 
-        background: #ffe7f0; 
-        color: #ff6f91; 
+        background: #FF9760; 
+        color: #458B73; 
         transform: translateY(-3px) scale(1.05); 
-        box-shadow: 0 0 15px #ffd1dc; 
+        box-shadow: 0 0 15px #FFD150; 
     }
 
     /* Container Sections */
@@ -68,7 +77,7 @@
         margin-top: 50px; 
         text-align: center; 
         display: none; 
-        border: 2px solid #ffd1dc;
+        border: 2px solid #FF9760;
         backdrop-filter: blur(8px);
     }
     .active { display: block; }
@@ -78,22 +87,23 @@
         text-align: left; 
         margin-bottom: 20px; 
         font-weight: bold; 
-        color: #ff6f91;
-        text-shadow: 1px 1px #ffe6ef;
+        color: #F26076;
+        text-shadow: 1px 1px #FFD150;
     }
     input[type="text"], input[type="password"], select { 
         width: 100%; 
         padding: 12px; 
         margin-top: 8px; 
-        border: 2px solid #ffb3c1; 
+        border: 2px solid #FF9760; 
         border-radius: 12px; 
         box-sizing: border-box; 
-        background: #fff0f5; 
-        color: #ff6f91; 
+        background: #fff8e7; 
+        color: #458B73; 
         font-weight: bold; 
+        font-family: 'Sour Gummy', sans-serif;
     }
 
-    /* Cute Pastel Gradient Button */
+    /* Gradient Button */
     .btn-submit { 
         width: 100%; 
         padding: 15px; 
@@ -103,15 +113,16 @@
         font-weight: bold; 
         cursor: pointer; 
         color: #fff; 
-        background: linear-gradient(135deg, #ffd1dc, #ffe7f0, #d0f0fd, #fdf6d0); 
+        background: linear-gradient(135deg, #F26076, #FF9760, #FFD150, #458B73); 
         background-size: 400% 400%; 
         animation: gradientBtn 10s ease infinite; 
-        text-shadow: 1px 1px #ffe6ef;
+        text-shadow: 1px 1px #fff;
+        font-family: 'Sour Gummy', sans-serif;
     }
     .btn-submit:hover { 
         opacity: 0.95; 
         transform: scale(1.05); 
-        box-shadow: 0 0 15px #ffd1dc, 0 0 20px #d0f0fd; 
+        box-shadow: 0 0 15px #FFD150, 0 0 20px #FF9760; 
     }
 
     @keyframes gradientBtn {
@@ -125,18 +136,18 @@
         text-align: left; 
         list-style: none; 
         padding: 0; 
-        font-family: 'Baloo 2', 'Comic Sans MS', monospace; 
-        color: #ff6f91;
-        text-shadow: 1px 1px #ffe6ef;
+        font-family: 'Sour Gummy', sans-serif; 
+        color: #F26076;
+        text-shadow: 1px 1px #FFD150;
     }
     #player-list li { 
         padding: 10px; 
-        border-bottom: 1px solid #ffc1d3; 
+        border-bottom: 1px solid #FF9760; 
         font-size: 15px; 
-        color: #ff8fb1; 
+        color: #458B73; 
     }
     #player-list li:nth-child(even) { 
-        background-color: rgba(255, 223, 230, 0.4); 
+        background-color: rgba(255, 209, 80, 0.2); 
     }
 </style>
 </head>
@@ -187,5 +198,6 @@
 </body>
 
 </html>
+
 
 
