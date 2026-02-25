@@ -60,9 +60,11 @@ def run_checker(event):
 def display_player_loop():
     # Names of classmates for the Intramurals
     players = [
-        "Escudero", "Estrada", "Tolentino", "Pimentel", "Binay",
-        "Cayetano", "Dela Rosa", "Ejercito", "Gatchalian", "Go",
-        "Hontiveros", "Lapid", "Legarda", "Marcos", "Padilla"
+        "Agena", "Ada", "Jamet", "Gonzales", "Baring",
+        "Brodhagen", "Baylon", "Cañete", "Galang", "Nardo",
+        "Cabatingan", "Dimaculangan", "Evangelista", "Olmedo", "Ong", 
+        "Villafuerte", "Sangreo", "Reyes", "Oliveros", "Ledesma",
+        "Yao", "Garabiles", "Nacino", "Villegas", "Rebadulla"
     ]
     
     list_container = document.querySelector("#player-list")
@@ -74,3 +76,4 @@ def display_player_loop():
         li_item.innerText = f"{i}) {name}"
 
         list_container.appendChild(li_item)
+
