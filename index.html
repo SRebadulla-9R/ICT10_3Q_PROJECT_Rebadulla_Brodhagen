@@ -1,203 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://pyscript.net/releases/2025.7.3/core.css">
-    <script type="module" src="https://pyscript.net/releases/2025.7.3/core.js"></script>
-    <title>Project 3Q  |  Intramurals</title>
-    
-    <style>
-    /* Import cute fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Henny+Penny&family=Sour+Gummy&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://pyscript.net/releases/2025.7.3/core.css">
+<script type="module" src="https://pyscript.net/releases/2025.7.3/core.js"></script>
+<title>Project 3Q | Intramurals</title>
 
-    /* Base Styles */
-    body { 
-        font-family: 'Sour Gummy', sans-serif; 
-        background: linear-gradient(135deg, #F26076, #FF9760, #FFD150, #458B73); 
-        background-size: 400% 400%; 
-        animation: gradientBG 20s ease infinite;
-        margin: 0; 
-        display: flex; 
-        flex-direction: column; 
-        align-items: center; 
-        color: #333; 
-    }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&family=Sour+Gummy&display=swap');
 
-    h1, h2, h3, h4, h5, h6 {
-        font-family: 'Henny Penny', cursive;
-        color: #F26076;
-        text-shadow: 1px 1px #FFD150;
-    }
+/* Base Styles */
+body {
+    font-family: 'Sour Gummy', sans-serif;
+    background: linear-gradient(135deg, #F26076, #FF9760, #FFD150, #458B73);
+    background-size: 400% 400%;
+    animation: gradientBG 20s ease infinite;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+}
 
-    @keyframes gradientBG {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
+/* Headers */
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Henny Penny', cursive;
+    color: #F26076;
+    text-shadow: 2px 2px #FFD150;
+}
 
-    /* Navigation Bar */
-    nav { 
-        background: #FFD150;
-        width: 100%; 
-        padding: 15px; 
-        display: flex; 
-        justify-content: center; 
-        gap: 15px; 
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
-        border-bottom: 2px solid #F26076;
-        border-radius: 0 0 20px 20px;
-    }
-    nav button { 
-        background: #F26076; 
-        color: #fff; 
-        border: 2px solid #FF9760; 
-        padding: 12px 20px; 
-        cursor: pointer; 
-        border-radius: 12px; 
-        font-weight: bold; 
-        text-shadow: 1px 1px #FFD150; 
-        transition: 0.3s; 
-    }
-    nav button:hover { 
-        background: #FF9760; 
-        color: #458B73; 
-        transform: translateY(-3px) scale(1.05); 
-        box-shadow: 0 0 15px #FFD150; 
-    }
+/* Animated gradient background */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
-    /* Container Sections */
-    .page-section { 
-        background: rgba(255, 255, 255, 0.9); 
-        padding: 40px; 
-        border-radius: 25px; 
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
-        width: 90%; 
-        max-width: 500px; 
-        margin-top: 50px; 
-        text-align: center; 
-        display: none; 
-        border: 2px solid #FF9760;
-        backdrop-filter: blur(8px);
-    }
-    .active { display: block; }
+/* Navigation */
+nav {
+    background: #FFD150;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    border-bottom: 3px dashed #F26076;
+    border-radius: 0 0 25px 25px;
+}
+nav button {
+    background: #F26076;
+    color: #fff;
+    border: 3px solid #FF9760;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 18px;
+    font-weight: bold;
+    text-shadow: 1px 1px #FFD150;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+nav button:hover {
+    background: #FF9760;
+    color: #458B73;
+    transform: translateY(-4px) scale(1.1) rotate(-2deg);
+    box-shadow: 0 0 20px #FFD150, 0 0 25px #FF9760;
+}
 
-    /* Form Elements */
-    .form-group { 
-        text-align: left; 
-        margin-bottom: 20px; 
-        font-weight: bold; 
-        color: #F26076;
-        text-shadow: 1px 1px #FFD150;
-    }
-    input[type="text"], input[type="password"], select { 
-        width: 100%; 
-        padding: 12px; 
-        margin-top: 8px; 
-        border: 2px solid #FF9760; 
-        border-radius: 12px; 
-        box-sizing: border-box; 
-        background: #fff8e7; 
-        color: #458B73; 
-        font-weight: bold; 
-        font-family: 'Sour Gummy', sans-serif;
-    }
+/* Sections */
+.page-section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    width: 90%;
+    max-width: 520px;
+    margin-top: 50px;
+    text-align: center;
+    display: none;
+    border: 3px dashed #FF9760;
+    backdrop-filter: blur(8px);
+    position: relative;
+}
+.active { display: block; }
+.page-section::before {
+    content: "🌟";
+    font-size: 3rem;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
-    /* Gradient Button */
-    .btn-submit { 
-        width: 100%; 
-        padding: 15px; 
-        margin-top: 25px; 
-        border: none; 
-        border-radius: 15px; 
-        font-weight: bold; 
-        cursor: pointer; 
-        color: #fff; 
-        background: linear-gradient(135deg, #F26076, #FF9760, #FFD150, #458B73); 
-        background-size: 400% 400%; 
-        animation: gradientBtn 10s ease infinite; 
-        text-shadow: 1px 1px #fff;
-        font-family: 'Sour Gummy', sans-serif;
-    }
-    .btn-submit:hover { 
-        opacity: 0.95; 
-        transform: scale(1.05); 
-        box-shadow: 0 0 15px #FFD150, 0 0 20px #FF9760; 
-    }
+/* Form Elements */
+.form-group {
+    text-align: left;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #F26076;
+    text-shadow: 1px 1px #FFD150;
+}
+input[type="text"], input[type="password"], select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 3px solid #FF9760;
+    border-radius: 20px;
+    box-sizing: border-box;
+    background: #fff8e7;
+    color: #458B73;
+    font-weight: bold;
+    font-family: 'Sour Gummy', sans-serif;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+input[type="text"]:focus, input[type="password"]:focus, select:focus {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #FFD150;
+}
 
-    @keyframes gradientBtn {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
+/* Gradient Button */
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(135deg, #F26076, #FF9760, #FFD150, #458B73);
+    background-size: 400% 400%;
+    animation: gradientBtn 10s ease infinite;
+    text-shadow: 1px 1px #fff;
+    font-family: 'Sour Gummy', sans-serif;
+    font-size: 1.2rem;
+}
+.btn-submit:hover {
+    opacity: 0.95;
+    transform: scale(1.08) rotate(-2deg);
+    box-shadow: 0 0 20px #FFD150, 0 0 25px #FF9760;
+}
 
-    /* Player List Styling */
-    #player-list { 
-        text-align: left; 
-        list-style: none; 
-        padding: 0; 
-        font-family: 'Sour Gummy', sans-serif; 
-        color: #F26076;
-        text-shadow: 1px 1px #FFD150;
-    }
-    #player-list li { 
-        padding: 10px; 
-        border-bottom: 1px solid #FF9760; 
-        font-size: 15px; 
-        color: #458B73; 
-    }
-    #player-list li:nth-child(even) { 
-        background-color: rgba(255, 209, 80, 0.2); 
-    }
+@keyframes gradientBtn {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Player List */
+#player-list {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    font-family: 'Sour Gummy', sans-serif;
+    color: #F26076;
+    text-shadow: 1px 1px #FFD150;
+}
+#player-list li {
+    padding: 12px;
+    border-bottom: 2px dashed #FF9760;
+    font-size: 16px;
+    color: #458B73;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    background: rgba(255, 209, 80, 0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+#player-list li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #FFD150, 0 0 20px #FF9760;
+}
+
+/* Radio/Checkbox styling */
+input[type="radio"] {
+    transform: scale(1.2);
+    margin-right: 6px;
+    accent-color: #F26076;
+}
 </style>
 </head>
 <body>
 
-    <nav>
-        <button py-click="show_signup">Sign Up</button>
-        <button py-click="show_checker">Team Checker</button>
-        <button py-click="show_players">Player List</button>
-    </nav>
+<nav>
+    <button py-click="show_signup">✨ Sign Up</button>
+    <button py-click="show_checker">📝 Team Checker</button>
+    <button py-click="show_players">🎮 Player List</button>
+</nav>
 
-    <div id="section-signup" class="page-section active">
-        <h2>Create Account</h2>
-        <div class="form-group">
-            <input type="text" id="user" placeholder="Username">
-            <input type="password" id="pass" placeholder="Password">
-        </div>
-        <button class="btn-submit" py-click="run_signup">Sign Up</button>
-        <p id="signup-out" style="color: #27ae60; font-weight: bold; margin-top: 20px;"></p>
+<div id="section-signup" class="page-section active">
+    <h2>🌸 Create Account 🌸</h2>
+    <div class="form-group">
+        <input type="text" id="user" placeholder="Username">
+        <input type="password" id="pass" placeholder="Password">
     </div>
+    <button class="btn-submit" py-click="run_signup">Sign Up 💖</button>
+    <p id="signup-out" style="color: #27ae60; font-weight: bold; margin-top: 20px;"></p>
+</div>
 
-    <div id="section-checker" class="page-section">
-        <h2>Team Checker</h2>
-        <div class="form-group">
-            <p>Are you done with the online registration?</p>
-            <input type="radio" name="reg" id="reg-yes"> Yes 
-            <input type="radio" name="reg" id="reg-no"> No
-        </div>
-        <div class="form-group">
-            <p>Do you have the medical clearance?</p>
-            <input type="radio" name="med" id="med-yes"> Yes
-            <input type="radio" name="med" id="med-no"> No
-        </div>
-        <div class="form-group">
-            <select id="grade_lvl"><option value="0">Select Grade</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select>
-            <select id="sect_name" style="margin-top:10px;"><option value="">Select Section</option><option value="Ruby">Ruby</option><option value="Emerald">Emerald</option><option value="Sapphire">Sapphire</option><option value="Topaz">Topaz</option></select>
-        </div>
-        <button class="btn-submit" py-click="run_checker">Check Team</button>
-        <div id="checker-out" style="margin-top:25px; font-weight:bold; color: #2c3e50;"></div>
+<div id="section-checker" class="page-section">
+    <h2>🕹 Team Checker 🕹</h2>
+    <div class="form-group">
+        <p>Are you done with the online registration?</p>
+        <input type="radio" name="reg" id="reg-yes"> Yes 
+        <input type="radio" name="reg" id="reg-no"> No
     </div>
-
-    <div id="section-players" class="page-section">
-        <h2>Intramurals Players</h2>
-        <ul id="player-list"></ul>
+    <div class="form-group">
+        <p>Do you have the medical clearance?</p>
+        <input type="radio" name="med" id="med-yes"> Yes
+        <input type="radio" name="med" id="med-no"> No
     </div>
-    <py-script src="./main.py"></py-script>
+    <div class="form-group">
+        <select id="grade_lvl">
+            <option value="0">Select Grade</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <select id="sect_name" style="margin-top:10px;">
+            <option value="">Select Section</option>
+            <option value="Ruby">Ruby</option>
+            <option value="Emerald">Emerald</option>
+            <option value="Sapphire">Sapphire</option>
+            <option value="Topaz">Topaz</option>
+        </select>
+    </div>
+    <button class="btn-submit" py-click="run_checker">Check Team 🎯</button>
+    <div id="checker-out" style="margin-top:25px; font-weight:bold; color: #2c3e50;"></div>
+</div>
 
+<div id="section-players" class="page-section">
+    <h2>🎉 Intramurals Players 🎉</h2>
+    <ul id="player-list"></ul>
+</div>
+
+<py-script src="./main.py"></py-script>
 </body>
-
 </html>
-
 
 
